@@ -250,6 +250,15 @@ body{display:flex;align-items:center;justify-content:center}
 .home-grid .app-icon.app-social .glyph,.home-grid .app-icon.app-xapp .glyph,.home-grid .app-icon.app-threads .glyph{width:clamp(47px,14.7vw,62px)!important;height:clamp(47px,14.7vw,62px)!important}
 @media(max-height:760px){.lock-pass-label{margin-top:62px!important;font-size:16px!important}.pass-keypad{max-height:390px!important}.pass-keypad button{width:min(100%,58px)!important;max-width:58px!important;font-size:26px!important}.pass-dots{margin-bottom:15px!important}.home-grid{gap:12px 3px!important}}
 
+
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
+
 </style>
 
 <style>
@@ -281,6 +290,15 @@ body{display:flex;align-items:center;justify-content:center}
 
 /* Apple Music-inspired Music app for Joss-phone; playback is provided by Apple's official embed. */
 .music-app{background:#fff!important;color:#18181d!important;overflow:hidden}.music-nav{height:54px;flex:0 0 54px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;background:#ffffffed;border-bottom:1px solid #eeeef2;backdrop-filter:blur(20px)}.music-nav button{border:0;background:transparent;color:#e53657;font-size:27px;width:34px;height:38px;display:grid;place-items:center}.music-nav strong{font-size:17px;font-weight:750;letter-spacing:-.2px}.music-content{flex:1;overflow:auto;padding:17px 16px 28px;background:linear-gradient(#fff,#fbfbfd)}.music-greeting{font-size:12px;color:#e43b5a;font-weight:700;margin-bottom:5px}.music-content>h1{font-size:29px;letter-spacing:-1px;font-weight:800;margin-bottom:17px}.music-feature{display:flex;gap:14px;align-items:center;padding:12px;border-radius:20px;background:linear-gradient(135deg,#fff0f3,#f5efff);box-shadow:0 5px 18px #3020400b;border:1px solid #f4e8ef}.music-feature-art{flex:0 0 118px;width:118px;height:118px;border-radius:15px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(145deg,#ff839e,#df205e 55%,#922bd0);color:#fff;box-shadow:0 5px 14px #d52c6630}.music-feature-art span{font-size:65px;line-height:1;font-weight:300}.music-feature-art small{font-size:8px;font-weight:800;letter-spacing:1px;margin-top:7px}.music-feature-meta{min-width:0;flex:1}.music-eyebrow{font-size:9px;color:#d52d54;font-weight:800;letter-spacing:.3px}.music-feature-meta h2{font-size:14px;line-height:1.28;margin:6px 0;color:#1b1b20}.music-feature-meta p{font-size:10px;color:#85858f;margin-bottom:10px}.music-feature-meta button{border:0;background:#e53255;color:white;border-radius:18px;padding:7px 12px;font-size:10px;font-weight:700}.music-section-head{display:flex;align-items:center;justify-content:space-between;margin:23px 1px 10px}.music-section-head h2{font-size:18px;font-weight:800;letter-spacing:-.3px}.music-section-head span{font-size:10px;color:#e23b59;font-weight:700}.music-embed-wrap{width:100%;overflow:hidden;border-radius:14px;background:#f4f4f7;min-height:450px}.music-embed-wrap iframe{display:block;width:100%;border:0}.music-open-link{display:block;text-align:center;color:#e33756;text-decoration:none;font-size:12px;font-weight:700;padding:13px 0 5px}.music-note{font-size:10px;line-height:1.5;color:#92929b;margin:8px 2px 12px}.music-tabbar{flex:0 0 67px;display:flex;justify-content:space-around;align-items:center;background:#fffffff2;border-top:1px solid #e9e9ee;padding:5px 2px 18px}.music-tabbar button{border:0;background:transparent;color:#8c8c96;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:9px;min-width:54px}.music-tabbar button b{font-size:20px;font-weight:500;line-height:1.1}.music-tabbar button.active{color:#e33756}.app-icon.app-music .glyph{background:linear-gradient(145deg,#fb5c83,#d51b5e 52%,#9228d4)!important}
+
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
+
 </style>
 
 
@@ -313,6 +331,15 @@ body{display:flex;align-items:center;justify-content:center}
 .app-dock{position:fixed!important;left:20px!important;right:20px!important;bottom:calc(12px + env(safe-area-inset-bottom,0px))!important;box-sizing:border-box;min-height:84px;padding:12px 8px!important;background:#ffffff42!important;border:1px solid #ffffff65!important;border-radius:30px!important;backdrop-filter:blur(24px);z-index:20!important}
 .app-dock .app-icon .glyph{width:min(14vw,56px)!important;height:min(14vw,56px)!important;border-radius:16px!important}
 @media(max-height:740px){.lock-screen{padding-top:12px!important;padding-bottom:12px!important}.lock-island{height:58px;margin-bottom:15px}.lock-screen .lock-date{margin-bottom:12px}.lock-screen .lock-notif{margin-bottom:10px!important;padding:8px 12px}.pass-dots{margin-bottom:10px!important}.pass-keypad{gap:6px 12px;max-height:340px}.pass-keypad button{max-width:61px!important}.home-screen{padding-top:48px!important;padding-bottom:110px!important}.home-status{margin-bottom:18px}.home-grid{gap:17px 6px!important}}
+
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
+
 </style>
 
 <style id="reference-layout-final">
@@ -353,6 +380,15 @@ body{display:flex;align-items:center;justify-content:center}
 .app-dock .app-icon .label-th,.app-dock .app-icon .label-zh{display:none!important}
 @media(max-height:760px){.lock-island{height:52px!important;margin-bottom:17px!important}.lock-time{font-size:58px!important}.lock-date{margin-bottom:10px!important}.lock-notif{padding:8px 11px!important;margin-bottom:9px!important}.lock-pass-label{margin-bottom:7px!important}.pass-dots{margin-bottom:8px!important}.pass-keypad{gap:4px 12px!important}.pass-keypad button{width:min(100%,55px)!important;max-width:55px!important;font-size:25px!important}.lock-bottom{margin-top:4px!important}.home-screen{padding-top:48px!important;padding-bottom:104px!important}.home-status{margin-bottom:18px!important}.home-grid{gap:15px 3px!important}.home-grid .app-icon .glyph{width:clamp(45px,13vw,56px)!important;height:clamp(45px,13vw,56px)!important}.app-dock{bottom:17px!important;height:72px!important;min-height:72px!important}}
 @media(min-width:500px){#w{width:min(430px,100vw)!important;height:min(932px,100dvh)!important}.home-grid{gap:26px 5px!important}}
+
+
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
 
 </style>
 </head>
@@ -722,6 +758,24 @@ renderLock();
 /* V6.5: tiny photo-replacement affordance, never cover the image. */
 .ig-photo>small.ig-replace-hint{position:absolute!important;top:8px!important;right:8px!important;bottom:auto!important;left:auto!important;width:22px!important;height:22px!important;min-width:0!important;padding:0!important;display:grid!important;place-items:center!important;font-size:11px!important;line-height:1!important;border-radius:50%!important;background:rgba(0,0,0,.42)!important;color:#fff!important;opacity:.72!important;z-index:2!important;pointer-events:none!important;backdrop-filter:blur(4px)}
 .ig-photo>small.ig-replace-hint:hover{opacity:1!important}
+
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
+
 </style>
 
-<style id="social-home-visibility-fix">.home-screen{padding-top:12px!important;padding-bottom:112px!important}.home-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:13px 5px!important;align-content:start!important}.home-grid .app-icon .glyph{width:clamp(43px,12.5vw,55px)!important;height:clamp(43px,12.5vw,55px)!important}.home-grid .app-icon{font-size:10px!important}.home-status{display:none!important}</style>
+<style id="social-home-visibility-fix">.home-screen{padding-top:12px!important;padding-bottom:112px!important}.home-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:13px 5px!important;align-content:start!important}.home-grid .app-icon .glyph{width:clamp(43px,12.5vw,55px)!important;height:clamp(43px,12.5vw,55px)!important}.home-grid .app-icon{font-size:10px!important}.home-status{display:none!important}
+/* User-requested correction: keep the original Instagram, Threads and X apps/content; remove duplicate in-home status bar. */
+.home-screen .home-status{display:none!important}
+.home-screen .home-grid{grid-template-rows:none!important;grid-auto-rows:min-content!important;grid-auto-flow:row!important;overflow-y:auto!important;overflow-x:hidden!important;align-content:start!important;gap:clamp(12px,3.2vh,24px) 4px!important;padding-bottom:12px!important;scrollbar-width:none!important}
+.home-screen .home-grid::-webkit-scrollbar{display:none!important}
+.home-screen .home-grid .app-icon.app-social,
+.home-screen .home-grid .app-icon.app-xapp,
+.home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
+
+</style>
