@@ -439,7 +439,7 @@ function renderChat(name,scrollBottom=false){activeApp='chat';activeChat=name;co
 function showGroupMembers(){const c=state.chats[activeChat];if(!c||!c.members)return;showToast('群聊成员 · '+c.members.length+' 人',c.members.join('、'))}
 function showAttachmentMenu(){const picker=document.createElement('input');picker.type='file';picker.accept='image/*,video/*';picker.multiple=true;picker.onchange=()=>{if(!picker.files||!activeChat)return;const target=activeChat;Array.from(picker.files).forEach(file=>{const r=new FileReader();r.onload=()=>{state.chats[target].messages.push(['J',r.result,clockNow()]);state.sentPhotos=state.sentPhotos||[];state.sentPhotos.unshift({name:file.name,type:file.type.startsWith('video/')?'video':'image',data:r.result,added:new Date().toLocaleString('zh-CN')});saveState();if(activeApp==='chat'&&activeChat===target)renderChat(target,true)};r.readAsDataURL(file)})};picker.click()}
 let aiReplyPending=false;
-const AI_API_URL=window.JOSS_AI_API_URL||'/api/chat';
+const AI_API_URL=window.JOSS_AI_API_URL||'https://joss-phone-ai-backend.onrender.com/api/chat';
 const AI_MEMORY_KEY='jossPhoneAIMemory_v1';
 function getAIMemory(){try{return JSON.parse(localStorage.getItem(AI_MEMORY_KEY)||'{}')}catch(e){return {}}}
 function saveAIMemory(name,value){const all=getAIMemory();all[name]=String(value||'').slice(-5000);try{localStorage.setItem(AI_MEMORY_KEY,JSON.stringify(all))}catch(e){showToast('记忆保存失败','浏览器存储空间不足；聊天记录仍会保存在本机。')}}
