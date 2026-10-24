@@ -444,6 +444,38 @@ body{display:flex;align-items:center;justify-content:center}
 @media(max-height:740px){.home-screen{padding-top:calc(82px + env(safe-area-inset-top,0px))!important}.home-screen .home-grid{gap:12px 5px!important}.home-screen .home-grid .app-icon{min-height:78px!important}}
 </style>
 
+
+<style id="official-store-icon-style">
+.app-icon .glyph img.official-store-icon{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:inherit!important}
+</style>
+
+
+<style id="apple-ios27-liquid-glass-refresh">
+/* Apple iOS 27 design-resource inspired visual refresh: layered glass, system materials, SF typography and softer depth. Existing app behavior/data is intentionally untouched. */
+:root{color-scheme:light;--ios-blue:#007aff;--ios-label:#1c1c1e;--ios-secondary:#6e6e73;--ios-separator:rgba(60,60,67,.16);--glass-light:rgba(255,255,255,.72);--glass-dark:rgba(30,30,34,.64)}
+html,body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Arial,sans-serif!important;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+#w{background:#f5f5f7;box-shadow:0 0 0 8px #19191b,0 0 0 10px #55565a,0 22px 70px #0008!important}
+#di{box-shadow:0 1px 0 #ffffff12 inset}
+#hb{background:rgba(255,255,255,.9);box-shadow:0 0 1px #0003}
+button,.btn,.bt,.bn,.bk,.bar button,.app-header button{font-family:inherit;transition:transform .16s ease,opacity .16s ease,background .2s ease}
+button:active,.btn:active,.bt:active,.bn:active,.bk:active{transform:scale(.97)}
+.app-icon .glyph{overflow:hidden;isolation:isolate;box-shadow:0 1px 2px #00000010,0 5px 12px #00000012,inset 0 1px 0 #ffffff55!important;border:1px solid #ffffff22}
+.app-icon .glyph:after{background:linear-gradient(145deg,#ffffff38 0%,#ffffff0b 32%,transparent 57%,#0000000b 100%)!important}
+.app-icon .glyph img{border-radius:inherit}
+.app-icon .label-th,.app-icon .label-zh{letter-spacing:-.12px}
+.app-header,.chat-header,.chat-view header,.app-screen header{backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%)}
+.app-header{border-bottom:1px solid var(--ios-separator)}
+.app-screen,.app-body{scrollbar-width:none}
+.app-screen::-webkit-scrollbar,.app-body::-webkit-scrollbar{display:none}
+.app-dock,.dock{background:rgba(245,245,247,.62)!important;backdrop-filter:blur(30px) saturate(180%)!important;-webkit-backdrop-filter:blur(30px) saturate(180%)!important;border:1px solid #ffffff72!important;box-shadow:0 8px 28px #00000013,inset 0 1px 0 #ffffffa8!important}
+.bubble{box-shadow:0 1px 1px #00000008}
+input,textarea,select,.contacts-search,.dm-search{font-family:inherit!important;outline-color:var(--ios-blue)}
+input,textarea,select{accent-color:var(--ios-blue)}
+.av,.avatar,.contact-avatar,.contact-detail-avatar{box-shadow:0 1px 2px #00000012,inset 0 0 0 1px #ffffff38}
+.app-screen .card,.app-screen .bx,.app-screen .contact-info-card,.app-screen .contact-card-row,.app-screen .contacts-favorites,.app-screen .group-members-strip{border-color:rgba(60,60,67,.1)}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+
 </head>
 <body>
 <div id="w"><div id="sb"><span id="statusTime">9:41</span><span class="sr"><svg viewBox="0 0 22 14"><rect x="0" y="9" width="3.6" height="5" rx="1" fill="#fff"/><rect x="6" y="6" width="3.6" height="8" rx="1" fill="#fff"/><rect x="12" y="3" width="3.6" height="11" rx="1" fill="#fff"/><rect x="18" y="0" width="3.6" height="14" rx="1" fill="#fff"/></svg><svg viewBox="0 0 20 15"><path d="M10 13.5 7.6 10.9a3.4 3.4 0 0 1 4.8 0z" fill="#fff"/><path d="M5.4 8.6a6.8 6.8 0 0 1 9.2 0M2.2 5.3a11.2 11.2 0 0 1 15.6 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span id="batteryLabel">69%</span></span></div><div id="di"></div><div id="c"></div><div id="hb" title="Home" onclick="goHome()"></div></div>
@@ -834,47 +866,71 @@ function toggleIgCamera(btn){if(btn&&btn.classList){btn.classList.toggle('off');
 function endInstagramCall(){clearIgCallTimers();renderHome()}
 
 </script>
-<style id="final-home-cleanup">
-/* Keep only requested interactive apps; create clear safe area below status row. */
-.home-screen{padding-top:calc(82px + env(safe-area-inset-top,0px))!important;padding-left:15px!important;padding-right:15px!important;padding-bottom:120px!important;overflow:hidden!important}
-.home-screen .home-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-template-rows:none!important;grid-auto-rows:min-content!important;gap:clamp(13px,2.1vh,20px) 5px!important;align-content:start!important;overflow-y:auto!important;overflow-x:hidden!important;max-height:calc(100% - 150px)!important;padding:8px 0 18px!important;scrollbar-width:none!important}
-.home-screen .home-grid::-webkit-scrollbar{display:none!important}
-.home-screen .home-grid .app-icon{display:flex!important;visibility:visible!important;opacity:1!important;min-height:80px!important}
-.home-screen .home-grid .app-icon .glyph{width:clamp(48px,13.6vw,58px)!important;height:clamp(48px,13.6vw,58px)!important;border-radius:14px!important;overflow:hidden!important;border:0!important;box-shadow:0 3px 9px #0002!important;background:transparent!important}
-.home-screen .home-grid .app-icon .glyph:after,.home-screen .home-grid .app-icon .glyph:before{display:none!important}
-.home-screen .app-dock{bottom:calc(20px + env(safe-area-inset-bottom,0px))!important}
-.home-screen .app-dock .app-icon .glyph{width:49px!important;height:49px!important;border-radius:14px!important}
-</style>
-<script id="final-home-icons-and-app-list">
-(function(){
- const allowed=['calls','sms','photos','notes','calendar','music','settings','camera','contacts','files','line','social','xapp','threads','youtube','safari'];
- const labels={calls:['โทรศัพท์','电话'],sms:['ข้อความ','短信'],photos:['อัลบั้มภาพถ่าย','相册'],notes:['บันทึก','备忘录'],calendar:['ปฏิทิน','日历'],music:['ดนตรี','音乐'],settings:['จัดตั้ง','设置'],camera:['กล้องถ่ายรูป','相机'],contacts:['รายชื่อ','联系人'],files:['ไฟล์','文件'],line:['LINE',''],social:['Instagram',''],xapp:['X',''],threads:['Threads',''],youtube:['YouTube',''],safari:['Safari','']};
- const svg=(body,bg)=>`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff" stop-opacity=".32"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs><rect width="64" height="64" rx="14" fill="${bg}"/><rect width="64" height="64" rx="14" fill="url(#g)"/>${body}</svg>`;
- const stroke=(d,color='#fff',w=3)=>`<path d="${d}" fill="none" stroke="${color}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
- const art={
- calls:svg(stroke('M19 13c-3 0-5 3-4 6 4 13 17 26 30 30 3 1 6-1 6-4v-7l-11-5-5 6c-5-3-9-7-12-12l6-5-5-9z'), '#34C759'),
- sms:svg(`<path d="M12 15a5 5 0 0 1 5-5h30a5 5 0 0 1 5 5v21a5 5 0 0 1-5 5H29L17 51V41a5 5 0 0 1-5-5Z" fill="#fff"/><path d="M18 18h28M18 25h22" stroke="#35B95A" stroke-width="2.5" stroke-linecap="round"/>`,'#32C759'),
- photos:svg(`<g transform="translate(32 32)"><path d="M0-24C12-24 20-15 20-5S12 14 0 24C-12 14-20 5-20-5S-12-24 0-24Z" fill="#fff"/><path d="M0-22C7-18 10-8 7 0S0 17 0 22" fill="#f5a3a3"/><path d="M-18-5C-10-9 0-5 6 2S15 14 18 14" fill="#ffd65c"/><path d="M-18 7C-8 3 2 7 8 14" fill="#55c7a4"/><path d="M-5-21C-10-10-6 1 2 8S12 16 14 18" fill="#65a6ff"/></g>`,'#f5f5f7'),
- notes:svg(`<rect x="12" y="8" width="40" height="48" rx="4" fill="#fff"/><path d="M12 20h40" stroke="#F6D64A" stroke-width="9"/><path d="M19 30h26M19 37h26M19 44h20" stroke="#C8C8C8" stroke-width="2.2" stroke-linecap="round"/>`,'#F5D64A'),
- calendar:svg(`<rect x="10" y="8" width="44" height="48" rx="7" fill="#fff"/><path d="M10 21h44" stroke="#FF453A" stroke-width="13"/><text x="32" y="17" text-anchor="middle" font-size="8" font-family="Arial" font-weight="700" fill="#fff">OCT</text><text x="32" y="46" text-anchor="middle" font-size="25" font-family="Arial" font-weight="600" fill="#222">25</text>`,'#fff'),
- music:svg(`<path d="M39 12v29a8 8 0 1 1-5-7V20l18-4v19a8 8 0 1 1-5-7V10Z" fill="#fff"/>`,'#E83258'),
- settings:svg(`<g transform="translate(32 32)" fill="#D8DDE4"><path d="M-4-27h8l2 7 6 3 7-3 5 7-5 6 1 7 5 5-3 8-8-1-5 5-1 8h-8l-2-8-6-3-7 3-5-7 5-6-1-7-5-5 3-8 8 1 5-5Z"/><circle r="10" fill="#747C87"/><circle r="5" fill="#D8DDE4"/></g>`,'#8B919B'),
- camera:svg(`<rect x="9" y="18" width="46" height="32" rx="7" fill="#F7F7F7"/><path d="M20 18l4-6h15l5 6" fill="#E8E8E8"/><circle cx="32" cy="34" r="12" fill="#6E7784"/><circle cx="32" cy="34" r="8" fill="#242B35"/><circle cx="29" cy="31" r="3" fill="#9ED4F4"/><circle cx="47" cy="24" r="2" fill="#4D5662"/>`,'#9EA6B2'),
- contacts:svg(`<circle cx="32" cy="22" r="11" fill="#fff"/><path d="M12 53c1-12 8-18 20-18s19 6 20 18" fill="#fff"/>`,'#4D8BF5'),
- files:svg(`<path d="M7 18a5 5 0 0 1 5-5h15l5 6h15a5 5 0 0 1 5 5v22a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5Z" fill="#E7F3FF"/><path d="M7 24h45l-5 22a5 5 0 0 1-5 4H12a5 5 0 0 1-5-5Z" fill="#3D9BFF"/>`,'#1685F8'),
- line:svg(`<path d="M32 10c-13 0-23 8-23 19 0 8 6 15 15 18l-1 6 10-5c13-1 22-9 22-19S45 10 32 10Z" fill="#fff"/><text x="32" y="33" text-anchor="middle" font-size="12" font-family="Arial" font-weight="700" fill="#06C755">LINE</text>`,'#06C755'),
- social:svg(`<rect x="12" y="12" width="40" height="40" rx="13" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="10" fill="none" stroke="#fff" stroke-width="4"/><circle cx="44" cy="20" r="3" fill="#fff"/>`,'url(#ig)'),
- xapp:svg(`<path d="M17 13h9l21 38h-9zM46 13h-8L17 51h9z" fill="#fff"/>`,'#000'),
- threads:svg(`<path d="M44 27c-1-10-7-15-16-15-10 0-17 8-17 21 0 12 6 19 17 19 9 0 15-5 15-13 0-7-5-11-12-11-6 0-10 3-10 8 0 4 3 6 7 6 7 0 10-6 10-14" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>`,'#000'),
- youtube:svg(`<rect x="10" y="17" width="44" height="30" rx="9" fill="#fff"/><path d="M28 24l13 8-13 8Z" fill="#FF0033"/>`,'#FF0033'),
- safari:svg(`<circle cx="32" cy="32" r="24" fill="#fff"/><circle cx="32" cy="32" r="21" fill="#168BFF"/><path d="M40 20 34 35 23 43l6-15Z" fill="#fff"/><path d="m40 20-11 8 5 7Z" fill="#FF453A"/><circle cx="32" cy="32" r="2" fill="#fff"/>`,'#168BFF')
- };
- // Gradient needs a valid SVG definition for Instagram.
- art.social=art.social.replace('url(#ig)','#D83B86');
- window.nativeAppIcon=function(id){return art[id]||''};
- window.appButton=function(a){const id=a[3],lab=labels[id]||[a[0],a[5]||''];return `<button type="button" class="app-icon app-${id} ${['social','xapp','threads'].includes(id)?'app-social':''}" aria-label="${lab[0]} ${lab[1]}" onclick="openApp('${id}')"><span class="glyph">${art[id]||''}</span><span class="label-th">${lab[0]}</span>${lab[1]?`<span class="label-zh">${lab[1]}</span>`:''}</button>`};
- const oldRenderHome=window.renderHome;
- window.renderHome=function(){activeApp='home';const map=new Map(appNames.map(a=>[a[3],a]));const home=allowed.filter(id=>!['calls','music','line','sms'].includes(id)).map(id=>map.get(id)).filter(Boolean);const dock=['calls','line','sms','music'].map(id=>map.get(id)).filter(Boolean);setScreen(`<div class="screen-root home-screen"><div class="app-grid home-grid">${home.map(a=>appButton(a)).join('')}</div><div class="app-dock">${dock.map(a=>appButton(a)).join('')}</div></div>`);updateThailandClock();};
+
+<script id="official-store-icon-revision">
+/*
+ * Official vendor icon artwork revision:
+ * Uses artwork returned by Apple's public iTunes Search API for third-party apps.
+ * Native iOS system app icons are not substituted because Apple does not publish
+ * their current Home Screen artwork as a simple public PNG bundle.
+ */
+(function () {
+  const officialStoreApps = [
+    { selector: '.app-icon.app-line', term: 'LINE', bundle: 'jp.naver.line.android' },
+    { selector: '.app-icon.app-social', term: 'Instagram', bundle: 'com.burbn.instagram' },
+    { selector: '.app-icon.app-threads', term: 'Threads', bundle: 'com.instagram.barcelona' },
+    { selector: '.app-icon.app-xapp', term: 'X', bundle: 'com.atebits.Tweetie2' },
+    { selector: '.app-icon.app-youtube', term: 'YouTube', bundle: 'com.google.ios.youtube' }
+  ];
+  const resolved = new Set();
+  function getAppButton(selector) {
+    return Array.from(document.querySelectorAll(selector)).find(el => el.querySelector('.glyph'));
+  }
+  function replaceIcon(button, artwork) {
+    const glyph = button && button.querySelector('.glyph');
+    if (!glyph || !artwork) return;
+    let img = glyph.querySelector('img.official-store-icon');
+    if (!img) {
+      img = document.createElement('img');
+      img.className = 'official-store-icon';
+      img.alt = '';
+      img.referrerPolicy = 'no-referrer';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;';
+      glyph.replaceChildren(img);
+    }
+    img.src = artwork;
+  }
+  async function loadOfficialArtwork(app) {
+    try {
+      const response = await fetch('https://itunes.apple.com/search?term=' + encodeURIComponent(app.term) + '&entity=software&limit=15&country=us');
+      if (!response.ok) return;
+      const data = await response.json();
+      const results = data.results || [];
+      const exact = results.find(item => (item.bundleId || '').toLowerCase() === app.bundle.toLowerCase())
+        || results.find(item => (item.trackName || '').toLowerCase() === app.term.toLowerCase());
+      if (!exact) return;
+      const artwork = exact.artworkUrl512 || exact.artworkUrl100 || exact.artworkUrl60;
+      if (!artwork) return;
+      const update = () => {
+        const button = getAppButton(app.selector);
+        if (button) replaceIcon(button, artwork);
+      };
+      update();
+      const observer = new MutationObserver(update);
+      observer.observe(document.body, { childList: true, subtree: true });
+    } catch (_) {
+      /* Offline / blocked network: preserve existing icon rather than break the simulator. */
+    }
+  }
+  function start() {
+    officialStoreApps.forEach(app => {
+      if (resolved.has(app.selector)) return;
+      resolved.add(app.selector);
+      loadOfficialArtwork(app);
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
 })();
 </script>
 
