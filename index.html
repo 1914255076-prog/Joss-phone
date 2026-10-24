@@ -960,3 +960,11 @@ function endInstagramCall(){clearIgCallTimers();renderHome()}
 .home-screen .home-grid .app-icon.app-threads{display:flex!important;visibility:visible!important;opacity:1!important}
 
 </style>
+
+<style id="dynamic-island-safe-spacing-v1">
+/* Keep the home-screen app grid below the Dynamic Island / top safe area. */
+.home-screen{padding-top:calc(env(safe-area-inset-top, 0px) + 78px)!important;}
+.home-screen .home-grid{scroll-padding-top:12px!important;}
+@media(max-height:740px){.home-screen{padding-top:calc(env(safe-area-inset-top, 0px) + 68px)!important;}}
+@media(max-height:650px){.home-screen{padding-top:calc(env(safe-area-inset-top, 0px) + 60px)!important;}}
+</style>
