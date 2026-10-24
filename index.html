@@ -403,6 +403,33 @@ body{display:flex;align-items:center;justify-content:center}
 .ig-call-screen{position:absolute;inset:0;background:#050505;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:95px 24px 70px;text-align:center;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
 .ig-call-top{display:flex;align-items:center;flex-direction:column;margin-top:65px}.ig-call-top>img,.ig-call-top>span{width:118px;height:118px;border-radius:50%;object-fit:cover;background:linear-gradient(135deg,#7d42ff,#ed397e,#ffad46);display:grid;place-items:center;font-size:48px;font-weight:600;animation:igBreath 2s ease-in-out infinite;box-shadow:0 0 0 9px #ffffff10}.ig-call-top h1{font-size:25px;margin-top:24px;font-weight:600}.ig-call-top p{font-size:16px;color:#c7c7cc;margin-top:9px}.ig-call-top small{margin-top:22px;color:#b8b8be;font-size:14px}.ig-call-actions{display:flex;justify-content:center;gap:62px;margin-bottom:50px}.ig-call-actions button,.ig-video-controls button{border:0;border-radius:50%;width:66px;height:66px;color:#fff;font-size:26px}.ig-call-end{background:#ff3b30!important}.ig-call-answer{background:#30d158!important}.ig-video-screen{position:absolute;inset:0;background:#111;color:white;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,sans-serif}.ig-remote-video{position:absolute;width:100%;height:100%;object-fit:cover;background:#181818}.ig-video-fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:linear-gradient(145deg,#302c3c,#101014);font-size:22px}.ig-video-fallback img,.ig-video-fallback>span:first-child{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:#8d43c8;font-size:42px}.ig-video-fallback small{font-size:12px;color:#ddd}.ig-video-head{position:absolute;top:56px;left:18px;right:18px;display:flex;justify-content:space-between;text-shadow:0 1px 6px #000;font-size:16px}.ig-self-window{position:absolute;top:86px;right:14px;width:110px;height:160px;border-radius:18px;overflow:hidden;background:#38383b;box-shadow:0 5px 18px #0007;touch-action:none}.ig-self-window video{width:100%;height:100%;object-fit:cover}.ig-self-window span{position:absolute;bottom:6px;left:8px;font-size:11px;text-shadow:0 1px 4px #000}.ig-chat-overlay{position:absolute;left:14px;bottom:155px;width:75%;display:flex;flex-direction:column;align-items:flex-start;gap:7px;pointer-events:none}.ig-chat-bubble{font-size:14px;line-height:1.3;color:#fff;text-shadow:0 1px 5px #000;background:#0005;padding:6px 9px;border-radius:12px;transition:opacity .8s;max-width:100%}.ig-chat-bubble.fade{opacity:0}.ig-message-box{position:absolute;bottom:86px;left:12px;right:12px;display:flex;gap:8px;background:#222a;border:1px solid #ffffff40;border-radius:24px;padding:7px 12px}.ig-message-box input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:#fff;font-size:15px}.ig-message-box button{border:0;background:transparent;color:#a8c7ff;font-weight:600}.ig-video-controls{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:18px}.ig-video-controls button{width:48px;height:48px;font-size:20px;background:#ffffff35}.ig-video-controls button.off{background:#f33}.ig-video-controls .ig-call-end{width:58px;height:58px}@keyframes igBreath{0%,100%{transform:scale(1);box-shadow:0 0 0 8px #ffffff10}50%{transform:scale(1.035);box-shadow:0 0 0 15px #ffffff08}}
 </style>
+
+<style id="user-final-ios27-thai-spacing">
+/* Final requested refinements: iOS 27-inspired layered icons, Thai labels + Chinese sublabels, and tighter passcode keypad spacing. */
+.home-screen{padding-top:calc(78px + env(safe-area-inset-top,0px))!important;padding-bottom:112px!important}
+.home-screen .home-widget{margin-top:5px!important;margin-bottom:18px!important}
+.home-screen .home-grid{padding-top:8px!important;gap:clamp(12px,2.0vh,18px) 5px!important;max-height:calc(100% - 165px)!important;align-content:start!important}
+.home-screen .app-icon{gap:3px!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+.home-screen .app-icon .glyph{position:relative;overflow:hidden;border-radius:18px!important;box-shadow:inset 0 1px 1px #ffffff75, inset 0 -1px 2px #0002,0 5px 12px #0003!important}
+.home-screen .app-icon .glyph img{object-fit:contain!important}
+/* recognizable layered iOS-style artwork rather than screenshot crops */
+.home-screen .app-icon.app-calendar .glyph{background:linear-gradient(#fff 0 27%,#e9e9ed 27% 100%)!important;color:#ff453a!important}
+.home-screen .app-icon.app-camera .glyph{background:linear-gradient(145deg,#6b737e,#30343b)!important}
+.home-screen .app-icon.app-notes .glyph{background:linear-gradient(#fff 0 28%,#f5d95c 28% 100%)!important;color:#4a4a4a!important}
+.home-screen .app-icon.app-clock .glyph{background:radial-gradient(circle,#fff 0 57%,#e5e7eb 58% 100%)!important;color:#111!important}
+.home-screen .app-icon.app-contacts .glyph{background:linear-gradient(135deg,#68b7ff,#2c67d8)!important;color:#fff!important}
+.home-screen .app-icon.app-settings .glyph{background:linear-gradient(145deg,#aeb3bc,#555b66)!important;color:#fff!important}
+.home-screen .app-icon.app-files .glyph{background:linear-gradient(145deg,#8bc8ff,#3689ed)!important;color:#fff!important}
+.home-screen .app-icon.app-calls .glyph{background:linear-gradient(145deg,#63e477,#20b84e)!important;color:#fff!important}
+.home-screen .app-icon.app-sms .glyph{background:linear-gradient(145deg,#64c8ff,#1684ed)!important;color:#fff!important}
+.home-screen .app-icon.app-music .glyph{background:linear-gradient(145deg,#ff6a92,#d51b5e 60%,#8e28d4)!important;color:#fff!important}
+/* Reduce the gaps between passcode digits to match the reference image. */
+.lock-screen .pass-keypad{width:min(100%,300px)!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(4,minmax(0,1fr))!important;gap:5px 11px!important;max-height:420px!important;margin-top:0!important}
+.lock-screen .pass-keypad button{width:min(100%,68px)!important;max-width:68px!important;font-size:29px!important}
+.lock-screen .pass-dots{gap:12px!important;margin-bottom:12px!important}
+@media(max-height:760px){.home-screen{padding-top:calc(68px + env(safe-area-inset-top,0px))!important}.home-screen .home-grid{gap:10px 4px!important;max-height:calc(100% - 145px)!important}.lock-screen .pass-keypad{gap:4px 9px!important;max-height:360px!important}.lock-screen .pass-keypad button{width:min(100%,56px)!important;max-width:56px!important;font-size:25px!important}}
+</style>
+
 </head>
 <body>
 <div id="w"><div id="sb"><span id="statusTime">9:41</span><span class="sr"><svg viewBox="0 0 22 14"><rect x="0" y="9" width="3.6" height="5" rx="1" fill="#fff"/><rect x="6" y="6" width="3.6" height="8" rx="1" fill="#fff"/><rect x="12" y="3" width="3.6" height="11" rx="1" fill="#fff"/><rect x="18" y="0" width="3.6" height="14" rx="1" fill="#fff"/></svg><svg viewBox="0 0 20 15"><path d="M10 13.5 7.6 10.9a3.4 3.4 0 0 1 4.8 0z" fill="#fff"/><path d="M5.4 8.6a6.8 6.8 0 0 1 9.2 0M2.2 5.3a11.2 11.2 0 0 1 15.6 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span id="batteryLabel">69%</span></span></div><div id="di"></div><div id="c"></div><div id="hb" title="Home" onclick="goHome()"></div></div>
@@ -788,23 +815,6 @@ function toggleIgCamera(btn){if(btn&&btn.classList){btn.classList.toggle('off');
 function endInstagramCall(){clearIgCallTimers();renderHome()}
 
 </script>
-
-<style id="ios27-thai-labels-and-lock-spacing-final">
-/* iOS 27-inspired home screen: lower grid below the system status bar and show Thai + Chinese labels. */
-.home-screen .home-status{position:relative!important;z-index:5!important;margin-top:4px!important;margin-bottom:24px!important;min-height:26px!important}
-.home-screen .home-grid,.home-screen .app-grid{position:relative!important;margin-top:10px!important;padding-top:6px!important;row-gap:clamp(14px,2.3vh,20px)!important;align-content:start!important}
-.home-screen .home-grid .app-icon,.home-screen .app-grid .app-icon{min-height:84px!important;gap:3px!important}
-.home-screen .home-grid .app-icon .label-th,.home-screen .app-grid .app-icon .label-th{display:block!important;visibility:visible!important;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:10px!important;line-height:1.15!important;white-space:nowrap!important;text-shadow:0 1px 3px #0008!important}
-.home-screen .home-grid .app-icon .label-zh,.home-screen .app-grid .app-icon .label-zh{display:block!important;visibility:visible!important;font-size:9px!important;line-height:1.1!important;opacity:.86!important;white-space:nowrap!important;text-shadow:0 1px 3px #0008!important}
-/* Compact keypad spacing to better match the supplied lock-screen reference. */
-.lock-screen .lock-pass-label{margin-top:0!important;margin-bottom:5px!important}
-.lock-screen .pass-dots{gap:10px!important;margin:7px 0 10px!important}
-.lock-screen .pass-dots i{width:8px!important;height:8px!important}
-.lock-screen .pass-keypad{width:min(100%,270px)!important;grid-template-columns:repeat(3,58px)!important;grid-template-rows:repeat(4,58px)!important;gap:5px 13px!important;justify-content:center!important;align-content:start!important;margin:0 auto!important;flex:0 0 auto!important}
-.lock-screen .pass-keypad button{width:58px!important;height:58px!important;max-width:58px!important;font-size:27px!important}
-@media(max-height:760px){.home-screen .home-status{margin-bottom:17px!important}.home-screen .home-grid,.home-screen .app-grid{margin-top:5px!important;row-gap:12px!important}.home-screen .home-grid .app-icon,.home-screen .app-grid .app-icon{min-height:75px!important}.lock-screen .pass-keypad{gap:4px 12px!important}.lock-screen .pass-keypad button{width:53px!important;height:53px!important;max-width:53px!important}.lock-screen .pass-dots{margin:5px 0 7px!important}}
-</style>
-
 </body></html>
 <style>
 /* V6.5: tiny photo-replacement affordance, never cover the image. */
