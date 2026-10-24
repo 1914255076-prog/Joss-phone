@@ -430,6 +430,20 @@ body{display:flex;align-items:center;justify-content:center}
 @media(max-height:760px){.home-screen{padding-top:calc(68px + env(safe-area-inset-top,0px))!important}.home-screen .home-grid{gap:10px 4px!important;max-height:calc(100% - 145px)!important}.lock-screen .pass-keypad{gap:4px 9px!important;max-height:360px!important}.lock-screen .pass-keypad button{width:min(100%,56px)!important;max-width:56px!important;font-size:25px!important}}
 </style>
 
+
+<style id="final-minimal-home-ios27">
+/* Minimal Thai-localized home screen with official brand names preserved. */
+.home-screen{padding:calc(94px + env(safe-area-inset-top,0px)) 18px 118px!important;overflow-y:auto!important;}
+.home-screen .home-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;grid-auto-flow:row!important;grid-template-rows:none!important;align-content:start!important;gap:clamp(15px,2.8vh,23px) 6px!important;padding:0 0 16px!important;}
+.home-screen .home-grid .app-icon{display:flex!important;visibility:visible!important;opacity:1!important;min-height:86px!important;}
+.home-screen .home-grid .app-icon .glyph{width:clamp(49px,14vw,61px)!important;height:clamp(49px,14vw,61px)!important;border-radius:19px!important;overflow:hidden!important;position:relative!important;box-shadow:0 5px 14px #0002,inset 0 1px 0 #ffffff85!important;border:1px solid #ffffff55!important;}
+.home-screen .home-grid .app-icon .glyph:after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(145deg,#ffffff28,transparent 45%,#00000008);pointer-events:none}
+.home-screen .home-grid .app-icon .label-th{font-size:10px!important;line-height:1.15!important;text-align:center!important}
+.home-screen .home-grid .app-icon .label-zh{font-size:9px!important;line-height:1.1!important;opacity:.82!important;text-align:center!important}
+.home-screen .app-dock{bottom:calc(25px + env(safe-area-inset-bottom,0px))!important}
+@media(max-height:740px){.home-screen{padding-top:calc(82px + env(safe-area-inset-top,0px))!important}.home-screen .home-grid{gap:12px 5px!important}.home-screen .home-grid .app-icon{min-height:78px!important}}
+</style>
+
 </head>
 <body>
 <div id="w"><div id="sb"><span id="statusTime">9:41</span><span class="sr"><svg viewBox="0 0 22 14"><rect x="0" y="9" width="3.6" height="5" rx="1" fill="#fff"/><rect x="6" y="6" width="3.6" height="8" rx="1" fill="#fff"/><rect x="12" y="3" width="3.6" height="11" rx="1" fill="#fff"/><rect x="18" y="0" width="3.6" height="14" rx="1" fill="#fff"/></svg><svg viewBox="0 0 20 15"><path d="M10 13.5 7.6 10.9a3.4 3.4 0 0 1 4.8 0z" fill="#fff"/><path d="M5.4 8.6a6.8 6.8 0 0 1 9.2 0M2.2 5.3a11.2 11.2 0 0 1 15.6 0" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/></svg><span id="batteryLabel">69%</span></span></div><div id="di"></div><div id="c"></div><div id="hb" title="Home" onclick="goHome()"></div></div>
@@ -612,11 +626,16 @@ function renderLock(){
  <div class="lock-pass-error" id="passError"></div></div>`);
  updateThailandClock();
 }
+// Add branded apps to the home screen when not already present in this build.
+if (typeof appNames !== 'undefined') {
+ if (!appNames.some(a=>a[3]==='youtube')) appNames.push(['YouTube','YouTube','#ff0033','youtube','▶','YouTube']);
+ if (!appNames.some(a=>a[3]==='safari')) appNames.push(['Safari','Safari','#0A84FF','safari','◉','Safari']);
+}
 function renderHome(){
  activeApp='home';
  // Keep the native top status row only; do not duplicate time/battery inside the home screen.
  // Explicitly place all three social apps in the visible home grid.
- const wanted=['calendar','photos','camera','mail','notes','clock','maps','weather','reminders','stocks','books','podcasts','tv','homeapp','contacts','settings','health','apple','journal','passwords','wallet','files','social','xapp','threads'];
+ const wanted=['calls','sms','photos','notes','calendar','music','settings','camera','contacts','files','line','social','xapp','threads','youtube','safari'];
  const homeApps=wanted.map(id=>appNames.find(a=>a[3]===id)).filter(Boolean);
  const dockWanted=['calls','line','sms','music'];
  const dockApps=dockWanted.map(id=>appNames.find(a=>a[3]===id)).filter(Boolean);
