@@ -788,6 +788,23 @@ function toggleIgCamera(btn){if(btn&&btn.classList){btn.classList.toggle('off');
 function endInstagramCall(){clearIgCallTimers();renderHome()}
 
 </script>
+
+<style id="ios27-thai-labels-and-lock-spacing-final">
+/* iOS 27-inspired home screen: lower grid below the system status bar and show Thai + Chinese labels. */
+.home-screen .home-status{position:relative!important;z-index:5!important;margin-top:4px!important;margin-bottom:24px!important;min-height:26px!important}
+.home-screen .home-grid,.home-screen .app-grid{position:relative!important;margin-top:10px!important;padding-top:6px!important;row-gap:clamp(14px,2.3vh,20px)!important;align-content:start!important}
+.home-screen .home-grid .app-icon,.home-screen .app-grid .app-icon{min-height:84px!important;gap:3px!important}
+.home-screen .home-grid .app-icon .label-th,.home-screen .app-grid .app-icon .label-th{display:block!important;visibility:visible!important;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;font-size:10px!important;line-height:1.15!important;white-space:nowrap!important;text-shadow:0 1px 3px #0008!important}
+.home-screen .home-grid .app-icon .label-zh,.home-screen .app-grid .app-icon .label-zh{display:block!important;visibility:visible!important;font-size:9px!important;line-height:1.1!important;opacity:.86!important;white-space:nowrap!important;text-shadow:0 1px 3px #0008!important}
+/* Compact keypad spacing to better match the supplied lock-screen reference. */
+.lock-screen .lock-pass-label{margin-top:0!important;margin-bottom:5px!important}
+.lock-screen .pass-dots{gap:10px!important;margin:7px 0 10px!important}
+.lock-screen .pass-dots i{width:8px!important;height:8px!important}
+.lock-screen .pass-keypad{width:min(100%,270px)!important;grid-template-columns:repeat(3,58px)!important;grid-template-rows:repeat(4,58px)!important;gap:5px 13px!important;justify-content:center!important;align-content:start!important;margin:0 auto!important;flex:0 0 auto!important}
+.lock-screen .pass-keypad button{width:58px!important;height:58px!important;max-width:58px!important;font-size:27px!important}
+@media(max-height:760px){.home-screen .home-status{margin-bottom:17px!important}.home-screen .home-grid,.home-screen .app-grid{margin-top:5px!important;row-gap:12px!important}.home-screen .home-grid .app-icon,.home-screen .app-grid .app-icon{min-height:75px!important}.lock-screen .pass-keypad{gap:4px 12px!important}.lock-screen .pass-keypad button{width:53px!important;height:53px!important;max-width:53px!important}.lock-screen .pass-dots{margin:5px 0 7px!important}}
+</style>
+
 </body></html>
 <style>
 /* V6.5: tiny photo-replacement affordance, never cover the image. */
